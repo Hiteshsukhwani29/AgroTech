@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="35"
-        android:src="@drawable/agroIntro_bg3"
+        android:src="@drawable/agrointro_bg3"
         android:textAlignment="center"/>
 
     <View
@@ -68,6 +68,7 @@
             android:layout_weight="10"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/intro3_start"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="80"
