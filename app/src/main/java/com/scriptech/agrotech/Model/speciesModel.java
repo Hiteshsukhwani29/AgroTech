@@ -1,22 +1,31 @@
 package com.scriptech.agrotech.Model;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.scriptech.agrotech.Adapter.SpeciesAdapter;
+
+import java.util.ArrayList;
+
 public class speciesModel {
-    public String speciesName;
+
+    public String name;
+
 
     public  speciesModel(){
 
     }
 
     public speciesModel(String speciesName) {
-        this.speciesName = speciesName;
+        this.name = name;
     }
 
     public String getSpeciesName() {
-        return speciesName;
+        return name;
     }
 
     public void setSpeciesName(String speciesName) {
-        this.speciesName = speciesName;
+        this.name = name;
     }
 }
 

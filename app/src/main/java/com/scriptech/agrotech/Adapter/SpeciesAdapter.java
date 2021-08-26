@@ -38,7 +38,7 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.Viewhold
 
       speciesModel speciesModel = speciesModelArrayList.get(position);
 
-      holder.txtSpecies.setText(speciesModel.speciesName);
+      holder.txtSpecies.setText(speciesModel.getSpeciesName());
 
 
     }
@@ -48,7 +48,7 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.Viewhold
         return speciesModelArrayList.size();
     }
 
-    public class Viewholder extends RecyclerView.ViewHolder {
+    public static class Viewholder extends RecyclerView.ViewHolder {
 
         TextView txtSpecies;
 
