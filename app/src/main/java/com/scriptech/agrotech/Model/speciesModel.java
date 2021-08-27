@@ -15,17 +15,19 @@ public class speciesModel {
     public  speciesModel(){
 
     }
+/*
 
     public speciesModel(String speciesName) {
         this.name = name;
     }
+*/
 
     public String getSpeciesName() {
         return name;
     }
-
+/*
     public void setSpeciesName(String speciesName) {
         this.name = name;
-    }
+    }*/
 }
 
