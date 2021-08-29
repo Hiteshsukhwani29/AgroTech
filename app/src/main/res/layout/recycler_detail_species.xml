@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_marginLeft="20dp"
+    android:elevation="8dp"
+    android:layout_marginRight="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_detailRecycler"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="10dp"
+            android:src="@drawable/rounded_et"
+           android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/txt_detail_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="बुवाई का समय"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@+id/img_detailRecycler"/>
+
+        <TextView
+            android:id="@+id/txt_detail_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="बढ़ती अवधि के दौरान 12-15 °C और परिपक्वता पर लगभग 30 °C"
+            android:textSize="16dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txt_detail_1"
+            android:layout_toRightOf="@+id/img_detailRecycler"/>
+
+    </RelativeLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
