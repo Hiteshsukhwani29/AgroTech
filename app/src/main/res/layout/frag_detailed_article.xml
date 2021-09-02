@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detailedArticle">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/detailedArticle_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/mukta_vaani"
+        android:textColor="#36455A"
+        android:text=" तकनीक से बढ़ाएं फसल का उत्पादन"
+        android:layout_marginLeft="10dp"
+        android:textSize="22sp" />
+
+    <RelativeLayout
+        android:id="@+id/article_author_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detailedArticle_heading">
+
+        <ImageView
+            android:id="@+id/article_image"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/article_image"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/article_image"
+            android:layout_centerVertical="true">
+            <TextView
+                android:id="@+id/article_person_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mukta_vaani"
+                android:textColor="#36455A"
+                android:text=" सौरव सिंह"
+                />
+            <TextView
+                android:id="@+id/article_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mukta_vaani"
+                android:textColor="#36455A"
+                android:layout_below="@+id/article_person_name"
+                android:textSize="12sp"
+                android:text="2019 . 01 . 01"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/article_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mukta_vaani"
+        android:layout_below="@+id/article_author_block"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="#36455A"
+        android:text="मंदसौर। जिले के किसान खेती की नई व उन्नत तकनीकें अपनाए और अपनी फसल का उत्पादन बढ़ाएं। किसान मित्र अपने क्षेत्र के सभी किसानों को खेती- किसानी की नई-नई बातों की जानकारी दें ताकि किसान नए तरीके से खेती कर अपनी फसल से अधिकतम मुनाफा कमा सकें। यह बात विधायक यशपालसिंह सिसौदिया ने कहीं।\n\n\nवे सोमवार को शहर के शासकीय स्नातकोत्तर महाविद्यालय के कुशाभाऊ ठाकरे ऑडिटोरियम में आयोजित जिले के किसान मित्रों की एक दिवसीय उन्मुखीकरण कार्यशाला में बोल रहे थे। उन्होंने कहा कि किसान भाई अब खेती करने का पुराना पेटर्न बदल दें, जागरूक बने, नवाचार अपनाएं। नए व उन्नत बीज अपनाएं और नई-नई कृषि तकनीकों से स्वयं भी जुडे और दूसरों को भी इसके लिए प्रेरित करें। कार्यशाला का आयोजन जिले के कृषि विभाग एवं परियोजना संचालक (आत्मा) द्वारा संयुक्त रूप से किया गया था।
+" />
+
+    <ImageView
+        android:id="@+id/article_poster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/article_poster"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/article_body"/>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
