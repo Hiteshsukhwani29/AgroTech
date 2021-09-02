@@ -26,12 +26,14 @@ public class detailedArticle extends Fragment {
     private FirebaseFirestore db;
     TextView ArticleHeading, ArticleAuthorName, ArticlePubDate, ArticleBody;
     ImageView ArticleAuthorImage, ArticlePoster;
-    String a, b, c, d, e, f;
+    String a, b, c, d, e, f, refno;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_detailed_article,container,false);
+
+        refno = getArguments().get("refno").toString();
 
         ArticleHeading = v.findViewById(R.id.heading_article);
         ArticleAuthorName = v.findViewById(R.id.article_person_name);
@@ -47,7 +49,7 @@ public class detailedArticle extends Fragment {
     }
 
     private void getdata(){
-        DocumentReference docRef = db.collection("DetailedArticle").document("0");
+        DocumentReference docRef = db.collection("DetailedArticle").document(refno);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {

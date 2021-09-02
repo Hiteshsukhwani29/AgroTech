@@ -4,6 +4,7 @@ public class articlesModel {
 
     public String name;
     public String image;
+    public String refno;
 
 
     public articlesModel(){
@@ -19,6 +20,9 @@ public class articlesModel {
     }
     public String getArticleImage() {
         return image;
+    }
+    public String getRefNo() {
+        return refno;
     }
 /*
     public void setSpeciesName(String speciesName) {
