@@ -1,14 +1,21 @@
 package com.scriptech.agrotech.Adapter;
 
 import android.content.Context;
+import android.graphics.ColorSpace;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.scriptech.agrotech.DetailSpecies;
 import com.scriptech.agrotech.Model.speciesModel;
 import com.scriptech.agrotech.R;
 
@@ -39,6 +46,22 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.Viewhold
       speciesModel speciesModel = speciesModelArrayList.get(position);
 
       holder.txtSpecies.setText(speciesModel.getSpeciesName());
+
+      holder.txtSpecies.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              Fragment fragment = new DetailSpecies();
+              Bundle bundle = new Bundle();
+              bundle.putString("refno", speciesModel.getdsNos());
+              fragment.setArguments(bundle);
+              FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
+              FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+              fragmentTransaction.replace(R.id.frame, fragment);
+              fragmentTransaction.addToBackStack(null);
+              fragmentTransaction.commit();
+
+          }
+      });
 
 
     }

@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/txtDetail_Sprcies"
+        android:id="@+id/txtDetail_Species"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -47,7 +47,7 @@
         android:id="@+id/img_ds"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_below="@+id/txtDetail_Sprcies"/>
+        android:layout_below="@+id/txtDetail_Species"/>
 
     <TextView
         android:id="@+id/fav_Condition"
@@ -99,7 +99,7 @@
                 android:layout_toRightOf="@+id/img_ds1"/>
 
             <TextView
-                android:id="@+id/txt_detail_2"
+                android:id="@+id/txt_detail_sowing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="बढ़ती अवधि के दौरान 12-15 °C और परिपक्वता पर लगभग 30 °C"
@@ -150,7 +150,7 @@
                     android:layout_toRightOf="@+id/img_ds2"/>
 
                 <TextView
-                    android:id="@+id/txt_detail_02"
+                    android:id="@+id/txt_detail_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="बढ़ती अवधि के दौरान 12-15 °C और परिपक्वता पर लगभग 30 °C"
@@ -201,7 +201,7 @@
                     android:layout_toRightOf="@+id/img_ds3"/>
 
                 <TextView
-                    android:id="@+id/txt_detail_002"
+                    android:id="@+id/txt_detail_soil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="उपयोग की जाने वाली मिट्टी"
