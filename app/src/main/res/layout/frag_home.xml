@@ -1,15 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="100"
+    android:layout_width="match_parent"
     tools:context=".Home">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:background="@drawable/agro_home_bg"
+            android:orientation="vertical"
+            android:weightSum="100">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="80"
+                android:background="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="">
 
 
+                    <ImageView
+                        android:id="@+id/img_Weather"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="25dp"
+                        android:src="@drawable/home_bg1" />
 
+                    <TextView
+                        android:id="@+id/txt_Weather"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@+id/img_Weather"
+                        android:text="वर्षा     "
+                        android:textSize="30dp" />
 
+                    <ImageView
+                        android:id="@+id/img_speed"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/img_Weather"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="25dp"
+                        android:src="@drawable/home_bg3" />
 
-</LinearLayout>
+                    <TextView
+                        android:id="@+id/txt_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_Weather"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="55dp"
+                        android:layout_toRightOf="@+id/img_speed"
+                        android:text="5M/Sec "
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/img_time"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_toRightOf="@+id/txt_Weather"
+                        android:src="@drawable/home_bg2" />
+
+                    <TextView
+                        android:id="@+id/txt_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_toRightOf="@+id/img_time"
+                        android:text="85%"
+                        android:textSize="25dp" />
+
+                    <ImageView
+                        android:id="@+id/img_temp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_below="@+id/img_time"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_toRightOf="@+id/txt_speed"
+                        android:src="@drawable/bg_ds2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_time"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_toRightOf="@+id/img_temp"
+                        android:text="85%"
+                        android:textSize="25dp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="बाजारी मूल्य"
+                android:fontFamily="@font/mukta_vaani"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="और देखें"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="200dp"
+                android:textSize="20dp"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_graph"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:divider="@null"
+            android:orientation="horizontal"
+            app:reverseLayout="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="लेख"
+                android:fontFamily="@font/mukta_vaani"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="और देखें"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="264dp"
+                android:textSize="20dp"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_Artical"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:divider="@null"
+            android:orientation="horizontal"
+            app:reverseLayout="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
