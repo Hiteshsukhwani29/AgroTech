@@ -52,7 +52,7 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.Viewhold
           public void onClick(View v) {
               Fragment fragment = new DetailSpecies();
               Bundle bundle = new Bundle();
-              bundle.putString("refno", speciesModel.getdsNos());
+              bundle.putString("dsNos", speciesModel.getdsNos());
               fragment.setArguments(bundle);
               FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
               FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

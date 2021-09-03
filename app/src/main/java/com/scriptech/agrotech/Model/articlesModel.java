@@ -4,7 +4,7 @@ public class articlesModel {
 
     public String name;
     public String image;
-    public String refno;
+    public String rno;
 
 
     public articlesModel(){
@@ -22,7 +22,7 @@ public class articlesModel {
         return image;
     }
     public String getRefNo() {
-        return refno;
+        return rno;
     }
 /*
     public void setSpeciesName(String speciesName) {

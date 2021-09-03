@@ -48,12 +48,15 @@ public class DetailSpecies extends Fragment {
         txt_detail_temp = v.findViewById(R.id.txt_detail_temp);
         txt_detail_soil = v.findViewById(R.id.txt_detail_soil);
 
+        db = FirebaseFirestore.getInstance();
+
+
         getdata();
         return v;
     }
 
     private void getdata() {
-        DocumentReference docRef = db.collection("DetailSpecies").document(dsNos);
+        DocumentReference docRef = db.collection("detailSpecies").document(dsNos);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -71,7 +74,7 @@ public class DetailSpecies extends Fragment {
                         txt_detail_temp.setText(c);
                         txt_detail_soil.setText(d);
 
-                        Picasso.get().load(b).into(img_ds);
+                        Picasso.get().load(e).into(img_ds);
 
                     }
                     else {

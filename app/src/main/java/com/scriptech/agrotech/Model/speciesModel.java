@@ -19,7 +19,7 @@ public class speciesModel {
     public  speciesModel(){
 
     }
-/*
+
 
     public void setdsNos(String refno) {
         this.dsNos = refno;
@@ -28,14 +28,14 @@ public class speciesModel {
     public speciesModel(String speciesName) {
         this.name = name;
     }
-*/
+
 
     public String getSpeciesName() {
         return name;
     }
-/*
+
     public void setSpeciesName(String speciesName) {
         this.name = name;
-    }*/
+    }
 }
 

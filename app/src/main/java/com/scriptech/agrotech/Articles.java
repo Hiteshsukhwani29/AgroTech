@@ -3,6 +3,7 @@ package com.scriptech.agrotech;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,8 +13,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -22,6 +27,7 @@ import com.scriptech.agrotech.Adapter.articlesAdapter;
 import com.scriptech.agrotech.Model.articlesModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Articles extends Fragment {
@@ -62,7 +68,7 @@ public class Articles extends Fragment {
 
     private void articlesList() {
 
-        db.collection("articlesList")
+       /* db.collection("articlesList")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -80,6 +86,29 @@ public class Articles extends Fragment {
                             articlesAdapter.notifyDataSetChanged();
                         }
                     }
-                });
+                });*/
+
+        db.collection("articlesList").get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                            for (DocumentSnapshot d : list) {
+                                articlesModel c = d.toObject(articlesModel.class);
+
+                                articlesModelArrayList.add(c);
+                            }
+                            articlesAdapter.notifyDataSetChanged();
+                        } else {
+                            Toast.makeText(getActivity(), "No data found in Database", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "Fail to get the data.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
