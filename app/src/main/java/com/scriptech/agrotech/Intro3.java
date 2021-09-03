@@ -33,7 +33,7 @@ public class Intro3 extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Fragment fragment = new Species();
+        Fragment fragment = new Articles();
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame,fragment);

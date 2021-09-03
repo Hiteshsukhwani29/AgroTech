@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DetailSpecies">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtDetail_Species"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="Barley / जौ"
+        android:fontFamily="@font/mukta_vaani"
+        android:layout_margin="30dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_specialist"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:elevation="8dp"
+        android:background="@drawable/rounded_et"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:strokeColor="@color/black"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:text="विशेषज्ञ से पूछें"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/img_ds"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/txtDetail_Species"/>
+
+    <TextView
+        android:id="@+id/fav_Condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="favourable conditions / अनुकूल परिस्थितियां"
+        android:textSize="18sp"
+        android:layout_below="@+id/img_ds"
+        android:textColor="@color/black"
+        android:layout_margin="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fav_Condition"
+        android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/fav_Condition"
+        app:cardCornerRadius="10dp"
+        android:layout_marginLeft="20dp"
+        android:elevation="8dp"
+        android:layout_marginRight="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_ds1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:padding="10dp"
+                android:src="@drawable/bg_ds" />
+
+            <TextView
+                android:id="@+id/txt_detail_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="बुवाई का समय"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_toRightOf="@+id/img_ds1"/>
+
+            <TextView
+                android:id="@+id/txt_detail_sowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="बढ़ती अवधि के दौरान 12-15 °C और परिपक्वता पर लगभग 30 °C"
+                android:textSize="16dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/txt_detail_1"
+                android:layout_toRightOf="@+id/img_ds1"/>
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/fav_Condition"
+            app:cardCornerRadius="10dp"
+            android:layout_marginLeft="20dp"
+            android:elevation="8dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_ds2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="10dp"
+                    android:src="@drawable/bg_ds2"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:id="@+id/txt_detail_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="तापमान"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@+id/img_ds2"/>
+
+                <TextView
+                    android:id="@+id/txt_detail_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="बढ़ती अवधि के दौरान 12-15 °C और परिपक्वता पर लगभग 30 °C"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/txt_detail_01"
+                    android:layout_toRightOf="@+id/img_ds2"/>
+
+            </RelativeLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/fav_Condition"
+            app:cardCornerRadius="10dp"
+            android:layout_marginLeft="20dp"
+            android:elevation="8dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_ds3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="10dp"
+                    android:src="@drawable/bg_ds3"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:id="@+id/txt_detail_001"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="उपयोग की जाने वाली मिट्टी"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@+id/img_ds3"/>
+
+                <TextView
+                    android:id="@+id/txt_detail_soil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="उपयोग की जाने वाली मिट्टी"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/txt_detail_001"
+                    android:layout_toRightOf="@+id/img_ds3"/>
+
+            </RelativeLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

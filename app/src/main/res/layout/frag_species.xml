@@ -34,6 +34,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="90"
+
         android:background="@drawable/rounded_et"/>
 
         <View
@@ -56,10 +57,5 @@
         android:layout_weight="80"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-
-
-
-
 
 </LinearLayout>

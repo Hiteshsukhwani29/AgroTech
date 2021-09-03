@@ -35,12 +35,14 @@ public class detailedArticle extends Fragment {
 
         refno = getArguments().get("refno").toString();
 
-        ArticleHeading = v.findViewById(R.id.heading_article);
+        ArticleHeading = v.findViewById(R.id.detailedArticle_heading);
         ArticleAuthorName = v.findViewById(R.id.article_person_name);
         ArticlePubDate = v.findViewById(R.id.article_date);
         ArticleBody = v.findViewById(R.id.article_body);
         ArticleAuthorImage = v.findViewById(R.id.article_image);
         ArticlePoster = v.findViewById(R.id.article_poster);
+
+        db = FirebaseFirestore.getInstance();
 
         getdata();
 
