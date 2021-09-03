@@ -1,0 +1,146 @@
+Index: app/src/main/java/com/scriptech/agrotech/DetailSpecies.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.scriptech.agrotech;\r\n\r\nimport android.graphics.Color;\r\nimport android.os.Build;\r\nimport android.os.Bundle;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.fragment.app.Fragment;\r\n\r\nimport android.util.Log;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.ImageView;\r\nimport android.widget.TextView;\r\n\r\nimport com.google.android.gms.tasks.OnCompleteListener;\r\nimport com.google.android.gms.tasks.Task;\r\nimport com.google.firebase.firestore.DocumentReference;\r\nimport com.google.firebase.firestore.DocumentSnapshot;\r\nimport com.google.firebase.firestore.FirebaseFirestore;\r\nimport com.squareup.picasso.Picasso;\r\n\r\n\r\npublic class DetailSpecies extends Fragment {\r\n\r\n    private FirebaseFirestore db;\r\n    TextView txtDetail_Species,txt_detail_sowing,txt_detail_temp,txt_detail_soil;\r\n    ImageView img_ds;\r\n    String a,b,c,d,e,dsNos;\r\n\r\n    @Override\r\n    public void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n\r\n    }\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container,\r\n                             Bundle savedInstanceState) {\r\n        View v = inflater.inflate(R.layout.frag_detail_species, container, false);\r\n\r\n        dsNos = getArguments().get(\"dsNos\").toString();\r\n\r\n        img_ds =v.findViewById(R.id.img_ds);\r\n        txtDetail_Species = v.findViewById(R.id.txtDetail_Species);\r\n        txt_detail_sowing = v.findViewById(R.id.txt_detail_sowing);\r\n        txt_detail_temp = v.findViewById(R.id.txt_detail_temp);\r\n        txt_detail_soil = v.findViewById(R.id.txt_detail_soil);\r\n\r\n        getdata();\r\n        return v;\r\n    }\r\n\r\n    private void getdata() {\r\n        DocumentReference docRef = db.collection(\"DetailSpecies\").document(dsNos);\r\n        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {\r\n            @Override\r\n            public void onComplete(@NonNull Task<DocumentSnapshot> task) {\r\n                if (task.isSuccessful()){\r\n                    DocumentSnapshot document = task.getResult();\r\n                    if (document!=null){\r\n                        a = document.getString(\"name\");\r\n                        b = document.getString(\"sowing\");\r\n                        c = document.getString(\"temp\");\r\n                        d = document.getString(\"soil\");\r\n                        e = document.getString(\"img_ds\");\r\n\r\n                        txtDetail_Species.setText(a);\r\n                        txt_detail_sowing.setText(b);\r\n                        txt_detail_temp.setText(c);\r\n                        txt_detail_soil.setText(d);\r\n\r\n                        Picasso.get().load(b).into(img_ds);\r\n\r\n                    }\r\n                    else {\r\n                        Log.d(\"LOGGER\", \"Error\");\r\n                    }\r\n                }else {\r\n                    Log.d(\"Logger\",\"get failed with\",task.getException());\r\n                }\r\n\r\n            }\r\n        });\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/scriptech/agrotech/DetailSpecies.java	(revision 0ffcefacc6427f224f6090af94af0f873d83f74e)
++++ app/src/main/java/com/scriptech/agrotech/DetailSpecies.java	(date 1630654429025)
+@@ -53,7 +53,7 @@
+     }
+ 
+     private void getdata() {
+-        DocumentReference docRef = db.collection("DetailSpecies").document(dsNos);
++        DocumentReference docRef = db.collection("detailSpecies").document(dsNos);
+         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+             @Override
+             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+Index: app/src/main/java/com/scriptech/agrotech/Adapter/SpeciesAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.scriptech.agrotech.Adapter;\r\n\r\nimport android.content.Context;\r\nimport android.graphics.ColorSpace;\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.fragment.app.FragmentManager;\r\nimport androidx.fragment.app.FragmentTransaction;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport com.scriptech.agrotech.DetailSpecies;\r\nimport com.scriptech.agrotech.Model.speciesModel;\r\nimport com.scriptech.agrotech.R;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class SpeciesAdapter extends RecyclerView.Adapter<SpeciesAdapter.Viewholder> {\r\n\r\n    Context context;\r\n    ArrayList<speciesModel> speciesModelArrayList;\r\n\r\n    public SpeciesAdapter(Context context, ArrayList speciesModelArrayList) {\r\n        this.context = context;\r\n        this.speciesModelArrayList = speciesModelArrayList;\r\n    }\r\n\r\n    @NonNull\r\n    @Override\r\n    public SpeciesAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {\r\n\r\n        View v = LayoutInflater.from(context).inflate(R.layout.recycler_species,parent,false);\r\n\r\n        return new Viewholder(v);\r\n    }\r\n\r\n    @Override\r\n    public void onBindViewHolder(@NonNull SpeciesAdapter.Viewholder holder, int position) {\r\n\r\n      speciesModel speciesModel = speciesModelArrayList.get(position);\r\n\r\n      holder.txtSpecies.setText(speciesModel.getSpeciesName());\r\n\r\n      holder.txtSpecies.setOnClickListener(new View.OnClickListener() {\r\n          @Override\r\n          public void onClick(View v) {\r\n              Fragment fragment = new DetailSpecies();\r\n              Bundle bundle = new Bundle();\r\n              bundle.putString(\"refno\", speciesModel.getdsNos());\r\n              fragment.setArguments(bundle);\r\n              FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();\r\n              FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();\r\n              fragmentTransaction.replace(R.id.frame, fragment);\r\n              fragmentTransaction.addToBackStack(null);\r\n              fragmentTransaction.commit();\r\n\r\n          }\r\n      });\r\n\r\n\r\n    }\r\n\r\n    @Override\r\n    public int getItemCount() {\r\n        return speciesModelArrayList.size();\r\n    }\r\n\r\n    public static class Viewholder extends RecyclerView.ViewHolder {\r\n\r\n        TextView txtSpecies;\r\n\r\n        public Viewholder(@NonNull View itemView) {\r\n            super(itemView);\r\n\r\n            txtSpecies = itemView.findViewById(R.id.txtSpecies);\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/scriptech/agrotech/Adapter/SpeciesAdapter.java	(revision 0ffcefacc6427f224f6090af94af0f873d83f74e)
++++ app/src/main/java/com/scriptech/agrotech/Adapter/SpeciesAdapter.java	(date 1630653829932)
+@@ -52,7 +52,7 @@
+           public void onClick(View v) {
+               Fragment fragment = new DetailSpecies();
+               Bundle bundle = new Bundle();
+-              bundle.putString("refno", speciesModel.getdsNos());
++              bundle.putString("dsNos", speciesModel.getdsNos());
+               fragment.setArguments(bundle);
+               FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
+               FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+Index: app/src/main/res/layout/frag_home.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/frag_home.xml	(date 1630606189986)
++++ app/src/main/res/layout/frag_home.xml	(date 1630606189986)
+@@ -0,0 +1,47 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:orientation="vertical"
++    android:weightSum="100"
++    tools:context=".Home">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="0dp"
++        android:background="@drawable/agro_home_bg"
++        android:weightSum="100"
++        android:orientation="vertical"
++        android:layout_weight="40">
++
++        <View
++            android:layout_width="match_parent"
++            android:layout_height="0dp"
++            android:layout_weight="30"/>
++
++        <com.google.android.material.card.MaterialCardView
++            android:layout_width="match_parent"
++            android:layout_height="0dp"
++            android:layout_marginLeft="20dp"
++            android:layout_marginRight="20dp"
++            android:layout_weight="70"
++            android:background="@color/white"
++            app:cardCornerRadius="30dp" >
++
++            <RelativeLayout
++                android:layout_width="match_parent"
++                android:layout_height="match_parent">
++
++
++            </RelativeLayout>
++
++        </com.google.android.material.card.MaterialCardView>
++
++
++
++    </LinearLayout>
++
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/scriptech/agrotech/Home.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/scriptech/agrotech/Home.java	(date 1630590295848)
++++ app/src/main/java/com/scriptech/agrotech/Home.java	(date 1630590295848)
+@@ -0,0 +1,27 @@
++package com.scriptech.agrotech;
++
++import android.os.Bundle;
++
++import androidx.fragment.app.Fragment;
++
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++
++public class Home extends Fragment {
++
++
++    @Override
++    public void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++
++    }
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        return inflater.inflate(R.layout.frag_home, container, false);
++    }
++}
+\ No newline at end of file
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Wed Aug 25 18:03:10 IST 2021\r\ndistributionBase=GRADLE_USER_HOME\r\ndistributionPath=wrapper/dists\r\nzipStoreBase=GRADLE_USER_HOME\r\nzipStorePath=wrapper/dists\r\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-6.5-bin.zip\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- gradle/wrapper/gradle-wrapper.properties	(revision 0ffcefacc6427f224f6090af94af0f873d83f74e)
++++ gradle/wrapper/gradle-wrapper.properties	(date 1630605744865)
+@@ -1,6 +1,6 @@
+-#Wed Aug 25 18:03:10 IST 2021
++#Thu Sep 02 23:32:24 IST 2021
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-all.zip
