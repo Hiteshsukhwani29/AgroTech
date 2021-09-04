@@ -63,8 +63,8 @@
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_below="@+id/img_Weather"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
                         android:src="@drawable/home_bg3" />
 
                     <TextView
@@ -125,30 +125,94 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30"
+                android:backgroundTint="@color/theme_color"
+                android:elevation="8dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="8dp">
+
+            </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30"
+                android:elevation="8dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="8dp">
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="30"
+                android:elevation="8dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="8dp">
+
+            </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:weightSum="100"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+               android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
                 android:text="बाजारी मूल्य"
                 android:fontFamily="@font/mukta_vaani"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:textColor="@color/black"
-                android:layout_marginLeft="20dp"/>
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:gravity="center"
                 android:text="और देखें"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="200dp"
-                android:textSize="20dp"/>
+                android:textSize="18sp"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_graph"
+            android:id="@+id/recycler_Home_graph"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:divider="@null"
@@ -159,26 +223,32 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-
+            android:weightSum="100"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:gravity="center_vertical"
                 android:text="लेख"
+                android:layout_marginLeft="20dp"
                 android:fontFamily="@font/mukta_vaani"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:textColor="@color/black"
-                android:layout_marginLeft="20dp"/>
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:gravity="center"
                 android:text="और देखें"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="264dp"
-                android:textSize="20dp"/>
+                android:textSize="18sp"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
