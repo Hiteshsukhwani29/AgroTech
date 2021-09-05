@@ -203,12 +203,13 @@
                 android:layout_weight="40"/>
 
             <TextView
+                android:id="@+id/vm1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="20"
                 android:gravity="center"
                 android:text="और देखें"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -243,12 +244,13 @@
                 android:layout_weight="40"/>
 
             <TextView
+                android:id="@+id/vm2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="20"
                 android:gravity="center"
                 android:text="और देखें"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
