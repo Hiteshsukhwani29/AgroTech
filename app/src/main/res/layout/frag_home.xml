@@ -1,217 +1,347 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:background="#FBFDFF"
     tools:context=".Home">
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:background="@drawable/agro_home_bg"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="260dp"
-            android:background="@drawable/agro_home_bg"
-            android:orientation="vertical"
-            android:weightSum="100">
+            android:layout_height="0dp"
+            android:layout_weight="8" />
 
-            <View
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:text="नमस्ते"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mukta_vaani"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:text="हमारे ऐप में आपका स्वागत है"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/mukta_vaani"
+            android:textSize="18sp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="60"
+            android:background="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="20" />
+                android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
+                android:id="@+id/ll_1"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="80"
-                android:background="@color/white"
-                app:cardCornerRadius="8dp"
-                app:cardUseCompatPadding="true">
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <View
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    >
+                    android:layout_weight="5"/>
 
+                <ImageView
+                    android:id="@+id/img_Weather"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="20"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/home_bg1" />
 
-                    <ImageView
-                        android:id="@+id/img_Weather"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="25dp"
-                        android:src="@drawable/home_bg1" />
+                <TextView
+                    android:id="@+id/txt_Weather"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"
+                    android:gravity="center_vertical"
+                    android:text="वर्षा     "
+                    android:textSize="20sp" />
 
-                    <TextView
-                        android:id="@+id/txt_Weather"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="30dp"
-                        android:layout_toRightOf="@+id/img_Weather"
-                        android:text="वर्षा     "
-                        android:textSize="30dp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"/>
 
-                    <ImageView
-                        android:id="@+id/img_speed"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_below="@+id/img_Weather"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/home_bg3" />
+                <ImageView
+                    android:id="@+id/img_speed"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="20"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/home_bg2" />
 
-                    <TextView
-                        android:id="@+id/txt_speed"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/txt_Weather"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="55dp"
-                        android:layout_toRightOf="@+id/img_speed"
-                        android:text="5M/Sec "
-                        android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/txt_speed"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"
+                    android:gravity="center_vertical"
+                    android:text="85%"
+                    android:textSize="20sp" />
 
-                    <ImageView
-                        android:id="@+id/img_time"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="25dp"
-                        android:layout_toRightOf="@+id/txt_Weather"
-                        android:src="@drawable/home_bg2" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/txt_time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="40dp"
-                        android:layout_toRightOf="@+id/img_time"
-                        android:text="85%"
-                        android:textSize="25dp" />
+            <LinearLayout
+                android:layout_below="@+id/ll_1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
 
-                    <ImageView
-                        android:id="@+id/img_temp"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:layout_below="@+id/img_time"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="25dp"
-                        android:layout_toRightOf="@+id/txt_speed"
-                        android:src="@drawable/bg_ds2" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/txt_time"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="50dp"
-                        android:layout_toRightOf="@+id/img_temp"
-                        android:text="85%"
-                        android:textSize="25dp" />
+                <ImageView
+                    android:id="@+id/img_time"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="20"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/home_bg3" />
 
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/txt_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"
+                    android:gravity="center_vertical"
+                    android:text="5m/s"
+                    android:textSize="20sp" />
 
-            </androidx.cardview.widget.CardView>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"/>
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/img_temp"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="20"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/bg_ds2" />
 
-        <LinearLayout
+                <TextView
+                    android:id="@+id/txt_temp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"
+                    android:gravity="center_vertical"
+                    android:text="50C"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
+            android:layout_height="0dp"
+            android:layout_weight="12" />
 
-            <View
-                android:layout_width="0dp"
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:backgroundTint="@color/theme_color"
+            android:elevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2.5"/>
+                android:orientation="vertical"
+                android:weightSum="10">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"
+                    android:padding="12dp"
+                    android:src="@drawable/home_bg4"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:text="कार्य अनुसूची बनाएं"
+                    android:gravity="center"
+                    android:textColor="@color/white"/>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:elevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="30"
-                android:backgroundTint="@color/theme_color"
-                android:elevation="8dp"
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="8dp">
+                android:orientation="vertical"
+                android:weightSum="10">
 
-            </androidx.cardview.widget.CardView>
-            <View
-                android:layout_width="0dp"
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"
+                    android:padding="12dp"
+                    android:src="@drawable/home_bg5"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:text="लाभ कैलकुलेटर"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_species"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:elevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2.5"/>
+                android:orientation="vertical"
+                android:weightSum="10">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/view_calculator"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="30"
-                android:elevation="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardUseCompatPadding="true">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"
+                    android:padding="12dp"
+                    android:src="@drawable/home_bg6"/>
 
-            </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:text="फसलों के बारे में विस्तृत जानकारी"
+                    android:gravity="center"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"/>
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.5"/>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="30"
-                android:elevation="8dp"
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="8dp">
+            </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.5"/>
+        </androidx.cardview.widget.CardView>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"/>
 
-        </LinearLayout>
+    </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:weightSum="100"
-            android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="100"
+        android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="40"
-               android:gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:text="बाजारी मूल्य"
-                android:fontFamily="@font/mukta_vaani"
-                android:textSize="24sp"
-                android:textColor="@color/black"
-                />
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="40"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:text="बाजारी मूल्य"
+            android:fontFamily="@font/mukta_vaani"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"/>
 
-            <TextView
-                android:id="@+id/vm1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="20"
-                android:gravity="center"
-                android:text="और देखें"
-                android:textSize="18sp" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/ViewMore_Graph"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:gravity="center"
+            android:text="और देखें"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_Home_graph"
@@ -220,39 +350,41 @@
             android:divider="@null"
             android:orientation="horizontal"
             app:reverseLayout="true"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:weightSum="100"
-            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="40"
-                android:gravity="center_vertical"
-                android:text="लेख"
-                android:layout_marginLeft="20dp"
-                android:fontFamily="@font/mukta_vaani"
-                android:textSize="24sp"
-                android:textColor="@color/black"
-                />
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="40"/>
 
-            <TextView
-                android:id="@+id/vm2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="20"
-                android:gravity="center"
-                android:text="और देखें"
-                android:textSize="18sp" />
-        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="100"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"
+            android:gravity="center_vertical"
+            android:text="लेख"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/mukta_vaani"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="40"/>
+
+        <TextView
+            android:id="@+id/ViewMore_Artical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:gravity="center"
+            android:text="और देखें"
+            android:textSize="18sp"/>
+    </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_Artical"
@@ -263,6 +395,8 @@
             app:reverseLayout="true"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+
     </LinearLayout>
+
 
 </androidx.core.widget.NestedScrollView>

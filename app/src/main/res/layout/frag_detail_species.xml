@@ -47,6 +47,7 @@
         android:id="@+id/img_ds"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:layout_margin="10dp"
         android:layout_below="@+id/txtDetail_Species"/>
 
     <TextView
@@ -70,6 +71,7 @@
         android:layout_height="150dp"
         android:layout_below="@+id/fav_Condition"
         app:cardCornerRadius="10dp"
+        android:layout_margin="15dp"
         android:layout_marginLeft="20dp"
         android:elevation="8dp"
         android:layout_marginRight="20dp">
@@ -80,8 +82,8 @@
 
             <ImageView
                 android:id="@+id/img_ds1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
                 android:padding="10dp"
@@ -122,6 +124,7 @@
             android:layout_below="@+id/fav_Condition"
             app:cardCornerRadius="10dp"
             android:layout_marginLeft="20dp"
+            android:layout_margin="15dp"
             android:elevation="8dp"
             android:layout_marginRight="20dp">
 
@@ -131,8 +134,8 @@
 
                 <ImageView
                     android:id="@+id/img_ds2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:padding="10dp"
                     android:src="@drawable/bg_ds2"
                     android:layout_centerVertical="true"
@@ -172,6 +175,7 @@
             android:layout_height="150dp"
             android:layout_below="@+id/fav_Condition"
             app:cardCornerRadius="10dp"
+            android:layout_margin="15dp"
             android:layout_marginLeft="20dp"
             android:elevation="8dp"
             android:layout_marginRight="20dp">
@@ -182,8 +186,8 @@
 
                 <ImageView
                     android:id="@+id/img_ds3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:padding="10dp"
                     android:src="@drawable/bg_ds3"
                     android:layout_centerVertical="true"
