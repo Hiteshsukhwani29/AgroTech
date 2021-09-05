@@ -18,22 +18,22 @@
         style="@style/Widget.AppCompat.DropDownItem.Spinner"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="18dp"
         android:layout_marginRight="30dp"
-        android:background="@color/black" />
+        android:layout_weight="7"
+        android:background="#F3F0F0" />
 
     <Spinner
         android:id="@+id/spinner_2"
         style="@style/Widget.AppCompat.DropDownItem.Spinner"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
-        android:background="@color/black" />
+        android:layout_weight="7"
+        android:background="#F3F0F0" />
 
     <View
         android:layout_width="match_parent"
@@ -67,7 +67,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="30dp"
-        android:hint="मात्रा / Quantity (In KiloGram)">
+        android:hint="आपको मिली राशि">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/credit_info"
@@ -91,73 +91,81 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         android:weightSum="100">
 
         <View
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_trans_7"/>
+            android:background="@drawable/ic_trans_7" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
             android:layout_weight="20"
             android:gravity="center_vertical"
             android:text="MSP"
-            android:layout_marginLeft="4dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
+
         <View
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_trans_4"/>
+            android:background="@drawable/ic_trans_4" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
             android:layout_weight="25"
             android:gravity="center_vertical"
             android:text="credit"
-            android:layout_marginLeft="4dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
+
         <View
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_trans_5"/>
+            android:background="@drawable/ic_trans_5" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
             android:layout_weight="20"
             android:gravity="center_vertical"
             android:text="Profit"
-            android:layout_marginLeft="4dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
+
         <View
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_trans_6"/>
+            android:background="@drawable/ic_trans_6" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
             android:layout_weight="20"
             android:gravity="center_vertical"
             android:text="Loss"
-            android:layout_marginLeft="4dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/item_details"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="सोयाबीन -  3950 Rs"/>
+        android:paddingLeft="30dp">
+
+        <TextView
+            android:id="@+id/item_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="सोयाबीन -  3950 Rs" />
 
     </LinearLayout>
 

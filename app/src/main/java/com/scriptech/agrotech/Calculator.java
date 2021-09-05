@@ -17,10 +17,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import static android.R.layout.simple_spinner_item;
+import static androidx.constraintlayout.widget.StateSet.TAG;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -48,12 +50,14 @@ public class Calculator extends Fragment {
 
     private FirebaseFirestore db;
     int sum;
-    String[] crop = {"सोयाबीन / Soyabeen",};
+    String[] crop = {"सोयाबीन / Soyabeen","abc","bbb"};
     String[] state = {"Madhya Pradesh", "Bihar", "Maharashtra"};
     Spinner spin, spin2;
-    int e1, e2;
+    int e1, e2, c, d;
     TextView itemdetails;
-    String a,b;
+    String name,price;
+    EditText et1,et2;
+    int diff=0,qdiff=0;
 
 
     @Nullable
@@ -65,6 +69,11 @@ public class Calculator extends Fragment {
          db = FirebaseFirestore.getInstance();
          spin = v.findViewById(R.id.spinner);
          spin2 = v.findViewById(R.id.spinner_2);
+
+         et1 = v.findViewById(R.id.weight_info);
+         et2 = v.findViewById(R.id.credit_info);
+
+
 
          itemdetails = v.findViewById(R.id.item_details);
 
@@ -83,22 +92,27 @@ public class Calculator extends Fragment {
                 switch (position) {
                     case 0: {
                         e1 = position*10;
+                        sum = e1 + e2;
                         break;
                     }
                     case 1: {
                         e1 = position*10;
+                        sum = e1 + e2;
                         break;
                     }
                     case 2: {
                         e1 = position*10;
+                        sum = e1 + e2;
                         break;
                     }
                     case 3: {
                         e1 = position*10;
+                        sum = e1 + e2;
                         break;
                     }
 
                 }
+                MarketValue();
             }
 
                 @Override
@@ -116,22 +130,27 @@ public class Calculator extends Fragment {
                 switch (position) {
                     case 0: {
                         e2 = position;
+                        sum = e1 + e2;
                         break;
                     }
                     case 1: {
                         e2 = position;
+                        sum = e1 + e2;
                         break;
                     }
                     case 2: {
                         e2 = position;
+                        sum = e1 + e2;
                         break;
                     }
                     case 3: {
                         e2 = position;
+                        sum = e1 + e2;
                         break;
                     }
 
                 }
+                MarketValue();
             }
 
             @Override
@@ -160,10 +179,10 @@ public class Calculator extends Fragment {
                 if (task.isSuccessful()){
                     DocumentSnapshot document = task.getResult();
                     if (document!=null){
-                        a = document.getString("name");
-                        b = document.getString("price");
+                        name = document.getString("name");
+                        price = document.getString("price");
 
-                        itemdetails.setText(a+" - "+b+" Rs");
+                        itemdetails.setText(name+" - "+price+" Rs");
 
 
                     }

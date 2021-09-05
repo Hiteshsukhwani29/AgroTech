@@ -1,5 +1,7 @@
 package com.scriptech.agrotech;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -61,6 +63,15 @@ public class Home extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.frag_home, container, false);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                getActivity().getWindow().setStatusBarColor(Color.parseColor("#20111111"));
+                getActivity().getWindow().getDecorView().setSystemUiVisibility(
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+            }
+        }
 
         recyclerView_graph = v.findViewById(R.id.recycler_Home_graph);
         recyclerView_article = v.findViewById(R.id.recycler_Artical);
