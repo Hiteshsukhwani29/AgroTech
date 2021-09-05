@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="100"
-    tools:context=".calsi">
+    tools:context=".Calculator">
 
     <View
         android:layout_width="match_parent"
@@ -148,6 +148,17 @@
             android:text="Loss"
             android:layout_marginLeft="4dp"
             android:textSize="18sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/item_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="सोयाबीन -  3950 Rs"/>
+
     </LinearLayout>
 
 </LinearLayout>

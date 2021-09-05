@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -44,6 +45,8 @@ public class Home extends Fragment {
     ArrayList<graphModel> graphModelArrayList;
     ArrayList<articlesModel> articlesModelArrayList;
 
+    CardView c2;
+
     TextView vm1,vm2;
     
 
@@ -76,9 +79,23 @@ public class Home extends Fragment {
         recyclerView_article.setAdapter(articlesAdapter);
         vm1 = v.findViewById(R.id.vm1);
         vm2 = v.findViewById(R.id.vm2);
+        c2 = v.findViewById(R.id.view_calculator);
 
         GraphList();
         articlesList();
+
+        c2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Calculator();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
         vm1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

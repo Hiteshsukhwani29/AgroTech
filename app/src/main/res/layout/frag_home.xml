@@ -150,12 +150,13 @@
                 android:layout_weight="2.5"/>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/view_calculator"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="30"
                 android:elevation="8dp"
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="8dp">
+                app:cardCornerRadius="8dp"
+                app:cardUseCompatPadding="true">
 
             </androidx.cardview.widget.CardView>
 
