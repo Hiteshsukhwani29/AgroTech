@@ -1,64 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:orientation="vertical"
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+<androidx.cardview.widget.CardView
     android:layout_width="match_parent"
-    android:layout_height="230dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginLeft="20dp"
-    android:elevation="8dp"
-    app:cardCornerRadius="10dp"
-    android:layout_marginRight="20dp">
+    android:layout_height="200dp"
+    android:layout_margin="20dp"
+    app:cardCornerRadius="20dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:weightSum="100"
-        android:id="@+id/ll_cardGarph"
-        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/img_graph"
+            android:layout_width="match_parent"
+            android:layout_margin="9dp"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"/>
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="27.5"/>
-    <TextView
-        android:id="@+id/txt_1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="35"
-        android:layout_gravity="center"
-        android:text="Current price :"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:gravity="center"/>
+        <RelativeLayout
+            android:layout_below="@+id/img_graph"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/txt_price"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:textSize="22sp"
-            android:text="40"/>
-        <View
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="27.5"/>
+            <TextView
+                android:id="@+id/txt_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Current Price :" />
+
+            <TextView
+                android:id="@+id/txt_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_1"
+                android:textSize="18sp"
+                android:layout_marginLeft="4dp" />
 
 
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
 
 </LinearLayout>
-
-
-    <ImageView
-
-        android:id="@+id/img_graph"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/ll_cardGarph"
-        />
-    </RelativeLayout>
-</androidx.cardview.widget.CardView>
