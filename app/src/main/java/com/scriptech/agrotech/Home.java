@@ -4,7 +4,10 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -39,7 +43,9 @@ public class Home extends Fragment {
     articlesAdapter articlesAdapter;
     ArrayList<graphModel> graphModelArrayList;
     ArrayList<articlesModel> articlesModelArrayList;
-    
+
+    TextView txt_ViewMoreGraph , txt_viewMoreArtical;
+    CardView card_species;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,10 @@ public class Home extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.frag_home, container, false);
+
+        txt_ViewMoreGraph = v.findViewById(R.id.ViewMore_Graph);
+        txt_viewMoreArtical = v.findViewById(R.id.ViewMore_Artical);
+        card_species=v.findViewById(R.id.card_species);
 
         recyclerView_graph = v.findViewById(R.id.recycler_Home_graph);
         recyclerView_article = v.findViewById(R.id.recycler_Artical);
@@ -71,6 +81,44 @@ public class Home extends Fragment {
 
         GraphList();
         articlesList();
+
+        txt_ViewMoreGraph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new graph();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        txt_viewMoreArtical.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Articles();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        card_species.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new Species();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+            }
+        });
+
         return v;
     }
 
